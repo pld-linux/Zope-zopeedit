@@ -11,7 +11,7 @@ Source0:	http://zope.org/Members/Caseman/ExternalEditor/%{version}/%{zope_subnam
 URL:		http://zope.org/Members/Caseman/ExternalEditor/
 Requires(post,postun):	grep
 Requires(postun):	fileutils
-BuildRequires:  python
+BuildRequires:	python
 %pyrequires_eq	python-modules
 Requires:	python-tkinter
 BuildArch:	noarch
