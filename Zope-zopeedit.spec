@@ -3,12 +3,12 @@
 Summary:	Client-side helper application for ExternalEditor Zope product
 Summary(pl):	Aplikacja kliencka dla ExternalEditor, produktu Zope
 Name:		Zope-%{zope_subname}
-Version:	0.7.2
+Version:	0.8
 Release:	1
 License:	ZPL 2.0
 Group:		Development/Tools
 Source0:	http://zope.org/Members/Caseman/ExternalEditor/%{version}/%{zope_subname}-%{version}-src.tgz
-# Source0-md5:	e2e9be6e50a67b401e346a5097fcb7fa
+# Source0-md5:	8ecc65067d32ac961476f924fa3e8b5b
 URL:		http://zope.org/Members/Caseman/ExternalEditor/
 BuildRequires:	python >= 2.2
 Requires(post,postun):	grep
@@ -32,7 +32,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_datadir}/%{zope_subname},%{_mandir}/man1,%{_bindir}}
 
 install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
-cp -af {Plugins,%{zope_subname}.py} $RPM_BUILD_ROOT%{_datadir}/%{zope_subname}
+cp -af {Plugins,version.txt,%{zope_subname}.py} $RPM_BUILD_ROOT%{_datadir}/%{zope_subname}
 
 %py_comp $RPM_BUILD_ROOT%{_datadir}/%{zope_subname}
 %py_ocomp $RPM_BUILD_ROOT%{_datadir}/%{zope_subname}
