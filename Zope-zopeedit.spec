@@ -4,7 +4,7 @@ Summary:	Client-side helper application for ExternalEditor Zope product
 Summary(pl):	Aplikacja pomocnicza dla ExternalEditor, produktu Zope
 Name:		Zope-%{zope_subname}
 Version:	0.7
-Release:	1
+Release:	2
 License:	ZPL 2.0
 Group:		Development/Tools
 Source0:	http://zope.org/Members/Caseman/ExternalEditor/%{version}/%{zope_subname}-%{version}-src.tgz
@@ -14,7 +14,6 @@ BuildRequires:	python >= 2.2
 %pyrequires_eq	python-modules
 Requires:	python-tkinter
 Requires:	Zope
-Requires:	Zope-ExternalEditor
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
