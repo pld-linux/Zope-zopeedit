@@ -11,6 +11,8 @@ Source0:	http://zope.org/Members/Caseman/ExternalEditor/%{version}/%{zope_subnam
 # Source0-md5:	87fe890a7f7c2506db16142bc4789b38
 URL:		http://zope.org/Members/Caseman/ExternalEditor/
 BuildRequires:	python >= 2.2
+Requires(post,postun):	grep
+Requires(postun):	fileutils
 %pyrequires_eq	python-modules
 Requires:	python-tkinter
 BuildArch:	noarch
@@ -49,14 +51,18 @@ EOF
 rm -rf $RPM_BUILD_ROOT
 
 %post
-if ! grep -q zopeedit /etc/mailcap ; then
+if ! grep -qs zopeedit /etc/mailcap ; then
+	umask 022
 	echo "application/x-zope-edit; /usr/bin/zopeedit %%s ; test=test -x /usr/bin/zopeedit" >> /etc/mailcap
 fi
 
 %postun
-if grep -q zopeedit /etc/mailcap ; then
-	sed -e 's@application/x-zope-edit; /usr/bin/zopeedit %%s ; test=test -x /usr/bin/zopeedit@@g' /etc/mailcap >> /etc/mailcap_new
-	mv -f /etc/mailcap_new /etc/mailcap 
+if [ "$1" = "0" ]; then
+	if grep -qs zopeedit /etc/mailcap ; then
+		umask 022
+		grep -v '^application/x-zope-edit; /usr/bin/zopeedit %%s ; test=test -x /usr/bin/zopeedit$' /etc/mailcap >> /etc/mailcap_new
+		mv -f /etc/mailcap_new /etc/mailcap 
+	fi
 fi
 
 %files
