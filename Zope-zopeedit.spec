@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.python
 %define		zope_subname	zopeedit
 Summary:	Client-side helper application for ExternalEditor Zope product
 Summary(pl):	Aplikacja kliencka dla ExternalEditor, produktu Zope
