@@ -13,7 +13,6 @@ URL:		http://zope.org/Members/Caseman/ExternalEditor/
 BuildRequires:	python >= 2.2
 %pyrequires_eq	python-modules
 Requires:	python-tkinter
-Requires:	Zope
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -21,7 +20,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Client-side helper application for ExternalEditor Zope product
 
 %description -l pl
-Aplikacja pomocnicza dla ExternalEditor, produktu Zope
+Aplikacja kliencka dla ExternalEditor, produktu Zope
 
 %prep
 %setup -q -n %{zope_subname}-%{version}-src
