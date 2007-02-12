@@ -1,6 +1,6 @@
 %define		zope_subname	zopeedit
 Summary:	Client-side helper application for ExternalEditor Zope product
-Summary(pl.UTF-8):   Aplikacja kliencka dla ExternalEditor, produktu Zope
+Summary(pl.UTF-8):	Aplikacja kliencka dla ExternalEditor, produktu Zope
 Name:		Zope-%{zope_subname}
 Version:	0.9.1
 Release:	1
