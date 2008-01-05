@@ -1,6 +1,6 @@
 %define		zope_subname	zopeedit
 Summary:	Client-side helper application for ExternalEditor Zope product
-Summary(pl.UTF-8):	Aplikacja kliencka dla ExternalEditor, produktu Zope
+Summary(pl.UTF-8):	Aplikacja kliencka dla produktu Zope ExternalEditor
 Name:		Zope-%{zope_subname}
 Version:	0.9.3
 Release:	1
@@ -9,19 +9,20 @@ Group:		Development/Tools
 Source0:	http://plope.com/software/ExternalEditor/%{zope_subname}-%{version}-src.tgz
 # Source0-md5:	25dbf5438c27266a2a0840834f9bcd36
 URL:		http://plope.com/software/ExternalEditor/
+BuildRequires:	python
+BuildRequires:	rpm-pythonprov
 Requires(post,postun):	grep
 Requires(postun):	fileutils
-BuildRequires:	python
 %pyrequires_eq	python-modules
 Requires:	python-tkinter
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Client-side helper application for ExternalEditor Zope product
+Client-side helper application for ExternalEditor Zope product.
 
 %description -l pl.UTF-8
-Aplikacja kliencka dla ExternalEditor, produktu Zope
+Aplikacja kliencka dla produktu Zope ExternalEditor.
 
 %prep
 %setup -q -n %{zope_subname}-%{version}
